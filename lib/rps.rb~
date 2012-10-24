@@ -1,0 +1,18 @@
+
+
+class RockPaperScissors
+	@@beats = {:piedra => :papel, :papel => :tijeras, :tijeras => :piedra,}
+	@@tiradas = @@beats.keys
+	def play (tirada_jugador)
+		tirada_jugador = tirada_jugador.to_sym
+		tirada_pc = @@tiradas.sample
+		if tirada_jugador == tirada_pc
+			"Empate"
+		elsif tirada_jugador == beats[tirada_pc]
+			"Tu oponente juega #{tirada_pc} y tu juegas #{tirada_jugador}. ¡Has ganado!"
+		else
+			"Tu oponente juega #{tirada_pc} y tu juegas #{tirada_jugador}. ¡Has perdido!"
+		end		
+	end
+end
+
